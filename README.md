@@ -1,6 +1,6 @@
 # Systolic-Array-2D-matrix-multiplication
 
-This is a repo to implement the 2D matrix multiplication using systolic array architecture.
+This is a repo to implement the 2D 4x4 or 8x8 matrix multiplication using systolic array architecture.
 
 ## Systolic Matrix Multiplication
 Need to add the desciption of the systolic array architecture and how it is used to multiply two matrices.
