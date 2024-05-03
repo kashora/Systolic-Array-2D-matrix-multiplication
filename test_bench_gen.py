@@ -1,16 +1,13 @@
 # Python script to generate a Verilog testbench for matrix multiplication
 
+import random
 def generate_verilog_testbench(N):
-    # Ensure N is either 4 or 8
     if N not in [4, 8]:
         raise ValueError("N must be either 4 or 8")
 
-    # Generate random 4-bit unsigned matrices for testing
-    import random
     matrix_a = [[random.randint(0, 15) for _ in range(N)] for _ in range(N)]
     matrix_b = [[random.randint(0, 15) for _ in range(N)] for _ in range(N)]
 
-    # Compute the expected multiplication result
     matrix_result = [[sum(matrix_a[i][k] * matrix_b[k][j] for k in range(N)) for j in range(N)] for i in range(N)]
 
     # Generate the Verilog testbench code
@@ -74,6 +71,9 @@ endmodule
 
     print(f"Verilog testbench for {N}x{N} matrix multiplication generated successfully!")
 
-# Example usage:
-generate_verilog_testbench(4) # For 4x4 matrices
-generate_verilog_testbench(8) # For 8x8 matrices
+
+# get the N from the sys.argv
+import sys
+N = int(sys.argv[1])
+
+generate_verilog_testbench(N) # For NxN matrices

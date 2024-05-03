@@ -10,25 +10,18 @@ Need to add the desciption of the systolic array architecture and how it is used
 
 To generate the test benches you can run the following command:
 ```bash
-$ python3 test_bench_gen.py
+$ make N=4
+$ make N=8
 ```
-This will generate the test benches for 4x4 and 8x8 matrix multiplication.
+This will generate and run the test benches for the NxN matrix multiplication, if the command did not show any errors then the test benches have passed.
 
-To validate the 4x4 matrix multiplication you can run the following command:
+In case of any errors, the command will show the following 
 ```bash
-$ iverilog -g2012 -o output matrix_multiplication_tb_4x4.v SystolicArray.sv PE.sv
-$ vvp output
+Error: result_matrix[0][0] = .. , expected = ..
 ```
-
-To validate the 8x8 matrix multiplication you can run the following command:
-```bash
-$ iverilog -g2012 -o output matrix_multiplication_tb_8x8.v SystolicArray.sv PE.sv
-$ vvp output
-```
-The folder "only 4 bits result" contains the code for 4x4 and 8x8 matrix multiplication assuming the arithmatic operation results in only 4 bits.
 
 
 ## To Do
 - [ ] Add the description of the systolic array architecture.
 - [ ] Add the description of the code.
-- [ ] Add a makefile to run the code.
+- [x] Add a makefile to run the code.
